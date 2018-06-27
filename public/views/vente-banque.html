@@ -1,0 +1,531 @@
+<div class="achat">
+    
+    
+    <div class="achat-debut" style="height:310px" >
+            <div class="achat-zone absolute-achat-zone">
+                       
+               <form >
+                   
+               <div class="achat-title">
+                           <div class="img-achat">
+                                   <img src="assets/images/operation.png" alt="">
+                           </div>
+                           <div class="achat-titre">
+                                       <h3>Opération : </h3>
+                           </div>            
+               </div>
+                   
+               <div class="vente-formulaire">
+                   <div class="vente-formulaire">
+                        <div class="achat-formulaire-container">
+                                <div class="formulaire-zone">
+                                        <div class="formulaire-label">
+                                                <label>Date de la cession </label>
+                                        </div>
+                                        <div class="formulaire-points">
+                                                <p>:</p>
+                                        </div>
+                                        <div class="formulaire-input">
+                                            <div >
+                                                <label>{{opDate}}</label>
+                                                        
+                                </div>
+                                        </div>
+                                </div>
+                                <div class="formulaire-zone">
+    
+                                        <div class="formulaire-label">
+                                                <label>Nom d'intermédiare agrée </label>
+                                        </div>
+                                        <div class="formulaire-points">
+                                                <p>:</p>
+                                        </div>
+                                        <div class="formulaire-input">
+                                            <div class="styled-zone">
+                                                <select  style="color:#333" ng-model="opIntermediare" >
+                                                        <option style="color:#333" ng-repeat="banque in banques" value="{{banque}}" >{{banque}}</option> 
+                                                </select>
+                                </div>                           
+                                        </div>
+                                </div>
+    
+                         </div>
+                        
+                        </div>
+                            
+                       </div>
+       
+                       <div class="achat-title small-h">
+                                       <div class="achat-titre">
+                                              <h3 style="font-size: 13px" class="different-h3">Données Supplémentaires : </h3>
+                                       </div>            
+                       </div>
+       
+                       <div class="achat-formulaire small-achat-banc">
+                                       <div class="achat-formulaire-container">
+                                               
+                                                       <div class="formulaire-zone">
+                                                               <div class="formulaire-label">
+                                                                       <label>Date de reçu bancaire</label>
+                                                               </div>
+                                                               <div class="formulaire-points">
+                                                                       <p>:</p>
+                                                               </div>
+                                                               <div class="formulaire-input">
+                                                                <div class="styled-zone">
+    
+                                                                <select  style="color:#333" name="" ng-model="opDateRecu" id="">
+                                                                               <option   style="color:#333" value="">Date de Delivrance</option>
+                                                                               <option   style="color:#333" value="1/05/2007">11/05/2007</option>
+                                                                               <option   style="color:#333" value="12/05/2007">12/05/2007</option>
+                                                                               <option   style="color:#333" value="13/05/2007">13/05/2007</option>
+                                                                               <option   style="color:#333" value="14/05/2007">14/05/2007</option>
+                                                               </select>
+                                                            </div>       
+                                                               </div>
+                                                       </div>
+                                                       <div class="formulaire-zone">
+                         
+                                                               <div class="formulaire-label">
+                                                                       <label>Réference</label>
+                                                               </div>
+                                                               <div class="formulaire-points">
+                                                                       <p>:</p>
+                                                               </div>
+                                                               <div class="formulaire-input">
+                                                                   <input ng-keyup="validRef()" ng-model="opReference" class="form-input" ng-class="{'form-error':!refFormat}" type="text"  >
+                                                               </div>
+                                                       </div>
+                                                       <div class="formulaire-zone">
+                         
+                                                                       <div class="formulaire-label">
+                                                                               <label>Pièce jointe</label>
+                                                                       </div>
+                                                                       <div class="formulaire-points">
+                                                                               <p>:</p>
+                                                                       </div>
+                                                                       <div class="formulaire-input">
+                                                                        <div class="file-icon-zone">
+    
+                                                                            
+                                                                        <div class="icon-file icon-abs">
+                                                                                    <img src="assets/images/icon-browse.png" alt="">
+                                                                            </div>
+                                                                            <div class="icon-input icon-abs hidden">
+                                                                                 <input class="form-input" onchange="angular.element(this).scope().fileNameChanged(this)" type="file" ng-model="opFile" >
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="icon-file-name">
+                                                                            <label>{{opFile}}</label>
+                                                                        </div>
+                                                                       </div>
+                                                       </div>
+                                                       
+                                       </div>
+                       
+                               </div>
+                               <div class="empty-space"></div>
+       
+                               <div class="client-options">
+                                       <div class="client-original">
+                                       <div ng-click="addOperation()"  class="original-option" >
+                                               <div class="img-add-option">
+                                                       <img src="assets/images/add-client.png" alt="">
+                                               </div>
+                                               <div class="content-add-option">
+                                                       <p>Ajouter</p>
+                                               </div>
+                                       </div>
+                                       
+                                       <div ng-hide="addOptionOperation"  class="original-hide">
+                                       </div>
+       
+       
+                                       </div>
+                                       <div class="client-original">
+                                       <div ng-click="editOperation()" class="original-option">
+                                               
+                                               <div class="img-add-option">
+                                                     <img src="assets/images/edit-client.png" alt="">
+                                               </div>
+                                               <div class="content-add-option">
+                                                       <p>Modifier</p>
+                                               </div>
+                                       </div>
+                                       
+                                       <div ng-hide="editOptionOperation" class="original-hide">
+                                        </div>
+                                       </div>
+                                       
+                               </div>
+                                   
+               </form>
+           </div>
+       
+           <div ng-show="zoneOperationEdit" class="vente-client-area absolute-achat-zone" style="height: 255px;">
+                <div class="vente-area-2" >
+                        <div class="add-area-zone">
+                                    <div class="add-area-label">
+                                            <label>Date de cession :</label>
+                                    </div>
+                                    <div class="add-area-input">
+                                     <label>{{opDate}}</label>
+                                                     
+                                    </div>
+                        </div>
+                        <div class="add-area-zone">
+                                    <div class="add-area-label">
+                                            <label for="">Nom dintérmediaire agrée :</label>
+                                    </div>
+                                    <div class="add-area-input">
+                                         
+                                                 <select  style="color:#333" ng-model="opIntermediare">
+                                                     <option style="color:#333" ng-repeat="banque in banques" value="{{banque}}" >{{banque}}</option> 
+                                                 </select>
+                                         
+                                    </div>
+                        </div>
+                        
+                </div>
+                <div class="area-line"></div>
+                <div class="add-area-5">
+                                <div class="add-area-zone">
+                                            <div class="add-area-label">
+                                                    <label for="">Date de reçu bancaire :</label>
+                                            </div>
+                                            <div class="add-area-input">
+                                                            <select  style="color:#333" name="" ng-model="opDateRecu" id="">
+                                                                            <option  style="color:#333" value="">Date de Delivrance</option>
+                                                                            <option  style="color:#333" value="1/05/2007">11/05/2007</option>
+                                                                            <option  style="color:#333" value="12/05/2007">12/05/2007</option>
+                                                                            <option  style="color:#333" value="13/05/2007">13/05/2007</option>
+                                                                            <option  style="color:#333" value="14/05/2007">14/05/2007</option>
+                                                            </select>
+                                            </div>
+                                </div>
+    
+                                
+                                <div class="add-area-zone">
+                                            <div class="add-area-label">
+                                                    <label for="">Reference :</label>
+                                            </div>
+                                            <div class="add-area-input">
+                                                    <input ng-model="opReference" class="normal-input" >
+                                            </div>
+                                </div>
+                                
+                                <div class="add-area-zone">
+                                            <div class="add-area-label">
+                                                    <label for="">Pièce jointe :</label>
+                                            </div>
+                                            <div class="add-area-input" style="width:80px; overflow:hidden;" >
+                                                    <input type="file" class="normal-input" >
+                                            </div>
+                                </div>
+                </div>
+             
+                <div class="area-line"></div>
+                
+    
+            <div class="add-area-buttons">
+                    
+                    
+                    <div ng-click="annulerOp()" class="annuler-button">
+                            
+                                            <div class="img-valid">
+                                                            <img src="assets/images/cancel.png" alt="">
+                                                    </div>
+                                                    <div class="content-valid">
+                                            <p>Annuler</p>
+                                   </div>
+                    </div>
+                    <div ng-click="validerOp()" class="valider-button">
+                            <div class="img-valid">
+                                    <img src="assets/images/valid.png" alt="">
+                            </div>
+                            <div class="content-valid">
+                                    <p>Valider</p>
+                            </div>
+                    </div>  
+            </div>
+        </div>
+    
+    </div>
+    
+       
+    <div ng-show="zoneDonnes" class="achat-debut achat-debut-length" ng-class="{'longerS':saved }"  >
+    
+        <div style="transition: 0.2s ease all;" class="achat-zone absolute-achat-zone achat-debut-length" ng-class="{'longerS':saved }" >
+            
+        <div class="achat-title">
+                    <div class="img-achat">
+                            <img src="assets/images/achat-data.png" alt="">
+                    </div>
+                    <div class="achat-titre">
+                                <h3>Données sur l'achat : </h3>
+                    </div>            
+        
+        </div>
+            
+        <div class="achat-formulaire special-achat-zone">
+                        <div class="achat-formulaire-container">
+                                <form>
+                                        <div class="formulaire-zone">
+                                                <div class="formulaire-label">
+                                                        <label>Dénomination du Device</label>
+                                                </div>
+                                                <div class="formulaire-points">
+                                                        <p>:</p>
+                                                </div>
+                                                
+                                                <div class="formulaire-input">
+                                                                <div class="styled-zone">
+                                                                                <select  style="color:#333" ng-model="dnDevice" ng-change="setCoursApp()">
+                                                                                    <option style="color:#333" ng-repeat="devise in devises" value="{{devise.name}}" >{{devise.name}}</option>
+                                                                                </select>
+                                                                </div> 
+                                                </div>
+                                        </div>
+                                        <div class="formulaire-zone">
+          
+                                                <div class="formulaire-label">
+                                                        <label>Montant de Device</label>
+                                                </div>
+                                                <div class="formulaire-points">
+                                                        <p>:</p>
+                                                </div>
+                                                <div class="formulaire-input">
+                                                        <input type="text" ng-model="dnMontant" ng-keyup="validMontant()" class="form-input" ng-class="{'form-error':validMontant()}">
+                                                </div>
+                                        </div>
+                                        <div class="formulaire-zone">
+          
+                                                        <div class="formulaire-label">
+                                                                <label>Course appliqué</label>
+                                                        </div>
+                                                        <div class="formulaire-points">
+                                                                <p>:</p>
+                                                        </div>
+                                                        <div class="formulaire-input">
+                                                                <input class="form-input" ng-model="dnCoursApp" type="text" readonly>
+                                                        </div>
+                                        </div>
+                                        <div class="formulaire-zone">
+          
+                                                        <div class="formulaire-label">
+                                                                <label>Contre-Valeur en Dirhams</label>
+                                                        </div>
+                                                        <div class="formulaire-points">
+                                                                <p>:</p>
+                                                        </div>
+                                                        <div class="formulaire-input">
+                                                                <input class="form-input" ng-model="dnCoursDh" type="text" readonly>
+                                                        </div>
+                                        </div>
+        
+                                        <div class="buttons-zone">
+                                                        <div class="button-opr-zone"> 
+                                                                <div class="button-opr-abs">
+                                                                                <button ng-click="dnAdd()" >
+                                                                                                <img src="assets/images/addicon.png" alt="">
+                                                                                                Ajouter
+                                                                                </button>
+                                                                                        
+                                                                </div>
+                                                                <div ng-hide="dnOptionAdd" class="opr-hide"></div>               
+                                                        </div>
+                                                        <div class="button-opr-zone">
+                                                        <div class="button-opr-abs">
+                                                                        <button ng-click="dnEdit()" >
+                                                                                        <img src="assets/images/edit.png" alt="">
+                                                                                        Modifier
+                                                                        </button>
+                                                        </div>
+                                                        <div ng-hide="dnOptionEdit" class="opr-hide"></div>
+                
+                                                        </div>
+                                                        <div class="button-opr-zone">
+                                                            <div class="button-opr-abs">
+                                                                            <button ng-click="dnNouveau()" >
+                                                                                            <img src="assets/images/edit.png" alt="">
+                                                                                            nouveau
+                                                                            </button>
+                                                            </div>
+                                                            <div ng-hide="dnOptionNouveau" class="opr-hide"></div>
+                    
+                                                            </div>
+                
+                                                </div>
+                                                
+                                        
+                                </form>
+                        </div>
+                </div>
+                <div class="well-saved-error">
+                                <div ng-show="saved_2" class="msg-save">
+                                        <div class="img-save-well">
+                                                <img src="assets/images/wellsaved.png" alt="">
+                                        </div>
+                                        <div class="content-save-well">
+                                                <p>enrigistré</p>
+                                        </div>
+                                </div>
+                                <div ng-show="erreur" class="msg-save"  >
+                                        <div class="img-save-well">
+                                                <img src="assets/images/error.png" alt="">
+                                        </div>
+                                        <div class="content-save-well">
+                                                <p style="color:rgb(248, 159, 159)" >error</p>
+                                        </div>
+                                </div>
+                </div>
+    
+        </div>
+    
+        <div ng-show="formulaireCacheur" class="absolute-achat-zone" >
+                <div class="cacheur-donnes">
+                </div>
+        </div>
+        <div ng-show="editDonnesOperation" class="achat-edit-operation absolute-achat-zone">
+                <div class="achat-edit-area">
+                        <div class="achat-edit-oprlabel">
+                                <label for="">Dénomination du Device :</label>
+                        </div>
+                        <div class="achat-edit-oprinput">
+                                <div class="styled-select">
+                                        <select  style="color:#333" ng-model="dnDevice" ng-change="setCoursApp()">
+                                            <option style="color:#333" ng-repeat="devise in devises" value="{{devise.name}}" >{{devise.name}}</option>
+                                        </select>
+                                </div>
+                        </div>
+                </div>
+                <div class="achat-edit-area">
+                                <div class="achat-edit-oprlabel">
+                                            <label for="">Montant de Device : </label>
+                                </div>
+                                <div class="achat-edit-oprinput">
+                                            <input ng-model="dnMontant" ng-keyup="validMontant()" class="form-input" ng-class="{'form-error':validMontant(), 'animation':animation}" type="text" >
+                                </div>
+                </div>
+                <div class="achat-edit-area">
+                            
+                                <div class="achat-edit-oprlabel">
+                                            <label for="">Cours appliqué :</label>
+                                </div>
+                                <div class="achat-edit-oprinput">
+                                        <input type="text" ng-model="dnCoursApp" readonly >
+                                </div>
+                </div>
+                <div class="achat-edit-area">
+                            <div class="achat-edit-oprlabel">
+                                            <label for="">Contre-Valeur en DH :</label>
+                            </div>
+                            <div class="achat-edit-oprinput">
+                                        <input type="text" ng-model="dnCoursDh" readonly>
+                            </div>        
+                    
+                </div>
+                
+                <div class="achat-edit-buttons">
+                        <div ng-click="dnValider()" class="achat-valider">
+                                <div class="achat-img-o">
+                                        <img src="assets/images/valid.png" alt="">
+                                </div>
+                                <div class="achat-content-o">
+                                        <p>Valider</p>
+                                </div>
+                        </div>
+                        <div ng-click="dnAnnuler()" class="achat-annuler" >
+                                    <div class="achat-img-o">
+                                            <img src="assets/images/cancel.png" alt="">
+                                    </div>
+                                    <div class="achat-content-o">
+                                            <p>Annuler</p>
+                                    </div>
+                        </div>
+                </div>
+    
+        </div>
+    
+    </div>
+    
+    <div class="table-ops blanc">
+            <div class="table-col">
+                    <p>Denomination de devise</p>
+            </div>
+            <div class="table-col">
+                    <p>Montant de devise</p>
+            </div>
+            <div class="table-col">
+                    <p>Cours appliqué</p>
+            </div>
+            <div class="table-col">
+                    <p>Cours en DH</p>
+            </div>
+            <div class="table-col">
+                    <p>Intermediaire agrée</p>
+            </div>
+            <div class="table-col">
+                    <p>Date de reçu bancaire</p>
+            </div>
+            <div class="table-col">
+                    <p>Reference</p>
+            </div>
+            <div class="table-col">
+                    <p>Heure d'enrigistrement</p>
+            </div>
+            <!-- <div class="delete table-white"><p>delete</p></div> -->
+    
+    </div>
+    
+    
+    <div ng-repeat="op in operations" class="table-opss">
+            <div class="table-col-s">
+                    <p>{{op.denom}}</p>
+            </div>
+            <div class="table-col-s">
+                    <p>{{op.montant}}</p>
+            </div>
+            <div class="table-col-s">
+                    <p>{{op.coursApp}}</p>
+            </div>
+            <div class="table-col-s">
+                    <p>{{op.coursDh}}</p>
+            </div>
+            <div class="table-col-s">
+                    <p>{{op.inter}}</p>
+            </div>
+            <div class="table-col-s">
+                    <p>{{op.date}}</p>
+            </div>
+            <div class="table-col-s">
+                    <p>{{op.ref}}</p>
+            </div>
+            <div class="table-col-s">
+                    <p>{{op.heure}}</p>
+            </div>
+            <div class="delete table-gray " ng-click="deleteOp(operation.id)" >
+                <div class="table-close">
+                                <img src="assets/images/Delete_Icon.png" alt="Supprimer">
+                </div>
+            </div>         
+    
+    </div>
+    
+    
+       <div class="achat-debut ">
+                       <div class="achat-zone absolute-achat-zone special-bordereau">
+                                    <div class="achat-title">
+                                            <div class="buttons-save-correct">
+                                                    <button class="button-blue" ng-click="EnregistrerDonnes()" >Enrigistrer</button>
+                                                    
+                                            </div>    
+                                    </div>
+                                
+                       </div>
+       </div>
+       
+    
+    </div>
+        
+     

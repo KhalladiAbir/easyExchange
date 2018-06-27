@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <link rel="stylesheet" href="assets/css/style.css">
+         <link rel="stylesheet" href="assets/css/vente2.css">
+         <link rel="stylesheet" href="assets/css/compteRndu.css">
+         
+         <link rel="stylesheet" href="assets/css/ventebcn.css">
+         <title>EasyExChange</title>
+         <meta charset="utf-8" >
+         <script src="bower_components/angular/angular.js"></script>
+         <script src="bower_components/angular-route/angular-route.js" ></script>
+         <script src="bower_components/angular-animate/angular-animate.js"></script>
+         <script src="app.js"></script>
+         <script src="route.js" ></script>
+         <script src="src/controllers/menu.js"></script>
+         <script src="src/controllers/items.js"></script>
+         <script src="src/controllers/achatController.js"></script>
+         <script src="src/controllers/venteController.js"></script>
+         <script src="src/controllers/coursController.js"></script>
+         <script src="src/controllers/heightController.js"></script>
+         <script src="src/controllers/venteBankController.js"></script>
+         <script src="src/controllers/compteControlleur.js"></script>
+
+        </head>
+
+    <body ng-app="easyExchange">
+        <header>
+                    <nav >
+                        <div class="nav-logo">
+                            <div class="img-logo">
+                                <img src="assets/images/logo.png" alt="">
+                            </div>
+                            <div class="nav-menu">
+
+                               
+
+                                <div class="nav-main">
+                                    <div class="nav-main-content">
+                                        <p>Main</p>
+                                    </div>
+                                </div>
+                                <div ng-controller="itemCtrl" class="nav-menu-list">
+                                    <div class="nav-menu-choix">
+                                        <div class="nav-menu-choice">
+                                            <div class="nav-menu-choice-img">
+                                                <img ng-class="{'switchIcon':slidePreferences}" ng-click="slidePrefs()" src="assets/images/tiret.png" alt="">
+                                            </div>
+                                            <div class="nav-menu-choice-text" ng-click="slidePrefs()">
+                                                <p>Préférences</p>
+                                            </div>
+                                        </div>
+                                        <div class="items-choice" ng-class="{'itemcss':slidePreferences}">
+                                            <a href="">
+                                                    <div class="item-choice">
+                                                            <p>second option</p>
+                                                        </div>
+                                            </a>
+                                            <a href="">
+                                                    <div class="item-choice">
+                                                            <p>third option</p>
+                                                        </div>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="nav-menu-choix">
+                                            <div class="nav-menu-choice">
+                                                <div class="nav-menu-choice-img">
+                                                    <img src="assets/images/tiret.png" ng-class="{'switchIcon':slideWidgets}" ng-click="slideWidgs()" alt="">
+                                                </div>
+                                                <div ng-click="slideWidgs()" class="nav-menu-choice-text"  >
+                                                    <p>Widgets</p>
+                                                </div>
+                                            </div>
+                                            <div class="items-choice" ng-class="{'itemcss':slideWidgets}">
+                                                <a href="https://www.google.com">
+                                                        <div class="item-choice">
+                                                                <p>visionneure pdf</p>
+                                                            </div>
+                                                    
+                                                </a>    
+                                                <a href="">
+                                                        <div class="item-choice">
+                                                                <p>first option</p>
+                                                            </div>
+                                                </a>
+                                                
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="nav-icon">
+                            <img src="assets/images/menu.png" alt="">
+                        </div>
+            
+                        <div class="nav-search">
+                            <div>
+                                <form action="">
+                                    <input placeholder="Search.." type="text">
+                                    <button type="submit">
+                                        <img src="assets/images/search.png" alt="">
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div ng-controller="menuCtrl" class="nav-login">
+                            <div class="nav-login-connect">
+                                <div class="nav-login-image">
+                                    <img src="assets/images/bmce.png" alt="">
+                                </div>
+                                <div class="nav-login-name">
+                                    <h2>
+                                        {{username}} 
+                                        <div id="connected">
+                                            <img ng-click="showSettings()" src="assets/images/slide.png" alt="">
+                                        </div>
+                                    </h2>
+                                </div>
+                            </div>
+                            
+                            <div class="nav-login-notif">
+                                <div class="nav-login-notifIcon">
+                                    <img  src="assets/images/notif.png" alt="">
+                                </div>
+                                <div  ng-click="showNotifications()" class="nav-login-number">
+                                    <p>25</p>
+                                </div>
+                            </div>
+            
+                            <div class="nav-login-options">
+                                <div class="nav-option-abs-1" ng-class="{'abs1':displaySettings}">
+                                    <div class="options-abs-1">
+                                            <div class="option-1">
+                                                <p><a href="">Inbox</a></p>
+                                            </div>
+                                            <div class="option-1">
+                                                <p><a href="">Profil</a></p>
+                                            </div>
+                                            <div class="option-1">
+                                                    <p><a href="">Paramètres</a></p>
+                                            </div>
+                                            <div class="nav-line"></div>
+                                            <div class="option-1">
+                                                    <p><a href="">Besoin d'aide ? </a></p>
+                                            </div>
+                                            <div class="option-1">
+                                                    <p><a href="login.html">Se déconnecter</a></p>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="nav-option-abs-2" ng-class="{'abs1':displayNotifications}" >
+                                    <div class="notif-scrolling">
+                                        <a href="">
+                                        <div class="nav-notif">
+                                            <div class="nav-notif-image">
+                                                <img src="assets/images/bmce.png" alt="">
+                                            </div>
+                                            <div class="nav-notif-content">
+                                                <p>
+                                                    <span>Taoufiq</span> a fait qlq chose ..
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="nav-notif-masquer">
+                                                <div class="line1"></div>
+                                                <div class="line2"></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="">    
+                                    <div class="nav-notif">
+                                                <div class="nav-notif-image">
+                                                    <img src="assets/images/bmce.png" alt="">
+                                                </div>
+                                                <div class="nav-notif-content">
+                                                        <p>
+                                                            <span>Taoufiq</span> a fait qlq chose ..
+                                                        </p>
+                                                    </div>
+                                                    
+                                                    <div class="nav-notif-masquer">
+                                                        <div class="line1"></div>
+                                                        <div class="line2"></div>
+                                                    </div>
+        
+                                        </div>
+                                    </a>
+                                        <a href="https://www.google.com">
+                                        <div class="nav-notif">
+                                                <div class="nav-notif-image">
+                                                    <img src="assets/images/bmce.png" alt="">
+                                                </div>
+                                                <div class="nav-notif-content">
+                                                        <p>
+                                                            <span>Taoufiq</span> a fait qlq chose ..
+                                                        </p>
+                                                    </div>
+                                                    
+                                                    <div class="nav-notif-masquer">
+                                                        <div class="line1"></div>
+                                                        <div class="line2"></div>
+                                                    </div>
+        
+                                        </div>
+                                       </a>
+                                       <a href=""> 
+                                       <div class="nav-notif">
+                                            
+                                                <div class="nav-notif-image">
+                                                        <img src="assets/images/bmce.png" alt="">
+                                                    </div>
+                                                    <div class="nav-notif-content">
+                                                            <p>
+                                                                <span>Taoufiq</span> a fait qlq chose ..
+                                                            </p>
+                                                        </div>
+                                                        
+                                                        <div class="nav-notif-masquer">
+                                                            <div class="line1"></div>
+                                                            <div class="line2"></div>
+                                                        </div>
+            
+                                        </div>
+                                    </a>
+                                    <a href="">    
+                                    <div class="nav-notif">
+                                            
+                                                <div class="nav-notif-image">
+                                                        <img src="assets/images/bmce.png" alt="">
+                                                    </div>
+                                                    <div class="nav-notif-content">
+                                                            <p>
+                                                                <span>Taoufiq</span> a fait qlq chose ..
+                                                            </p>
+                                                        </div>
+                                                        
+                                                        <div class="nav-notif-masquer">
+                                                            <div class="line1"></div>
+                                                            <div class="line2"></div>
+                                                        </div>
+            
+                                        </div>
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+            
+                </header>
+        <section ng-controller="heightCtrl" id="application">
+            <div class="application-options">
+                <div class="app-opts">
+                    <a href="#!/cours-charge"ng-click="coursClick()" >Cours de change</a>
+                    <a href="#!/achat-client" ng-click="size()">Achat clientelle</a>
+                    <a href="#!/vente-client" ng-click="sizeV()">Vente clientelle</a>
+                    <a href="#!/vente-banque">Vente à la Banque</a>
+                    <a href="#!/comptes-rendus">Comptes rendus</a>
+                </div>
+            </div>
+            <div class="views" ng-class="{'het1':begHeight, 'het2':medHeight, 'het3':bigHeight,'het4':begHeightA,'het5':medHeightA,'het6':bigHeightA}" >
+                <div class="view-container" ng-view="">
+                </div>
+            </div>
+        </section>
+        
+    </body>
+</html>

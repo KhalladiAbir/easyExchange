@@ -1,0 +1,90 @@
+.formulairee-label, .formulairee-input {
+    
+    float: left;
+    height: 20px;
+    margin:2px 0 0 0;
+}
+
+.formulairee-label {
+    width:350px;
+}
+
+.formulairee-input {
+    width:400px;
+}
+
+.formulairee-input {
+    width:220px;
+    height: 20px;
+    border:none;
+    border-radius: 2px;
+}
+
+.formulairee-label {
+    margin-left:10px;
+}
+.formulairee-label label, .formulairee-input label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.cacheure-data {
+    width:280px;
+    height: 130px;
+    background:rgba(255,255,255,0.3);
+    margin-left:360px;
+}
+
+/* Operation length quand le msg s'affiche */
+.operation-lenght {
+    height:290px; /* 265 */
+}
+
+/* fin */
+
+.check-input, .check-label {
+    float:left;
+}
+.check-input {
+    width:30px;
+}
+.check-label {
+    width:190px;
+}
+
+.vente-edit-operation {
+    width:400px;
+    height: 145px;
+    background: #fbfbfb;
+    border-radius: 5px;
+    border:2px solid #e0e0e0; 
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.1); 
+    margin:20px 0 0 330px;
+}
+
+.vente-area-1, .vente-area-2, .vente-area-3 {
+    width: 400px;
+    margin:10px 50px;
+    height: 60px;
+}
+
+
+.vente-client-area {
+    width: 500px;
+    height: 295px;
+    background: #fbfbfb;
+    border-radius: 5px;
+    border:2px solid #e0e0e0; 
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.1); 
+    margin:20px 0 0 330px;
+}
+.vente-formulaire {
+    height: 60px;
+    width:98%;
+    margin:10px 1% 0 1%;
+}
+
+
+.long-vente {
+    height: 370px;
+}

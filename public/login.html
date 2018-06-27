@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/css/page.css">
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="src/app/application.js"></script>
+        <script src="src/controllers/sendDataController.js"></script>
+    </head>
+
+    <body ng-app="easyLogin">
+        <section ng-controller="loginController" id="login">
+            <div class="header">
+                <div class="header-logo">
+                    <img src="assets/images/logo.png" alt="">
+                </div>
+            </div>
+            
+            <div class="login">
+                <div class="login-title">
+                    <h1>{{msg}}Connectez-vous pour accédér à l'application EasyEXCHANGE</h1>
+                </div>
+                <div class="login-content">
+                    <div class="login-content-img lower-img">
+                        <img src="assets/images/login.png" alt="">
+                    </div>
+                    <form method="post"  ng-submit="sendData($event)">
+                    <div class="login-content-formulaire lower">
+                        <div class="login-content-1">
+                            <div class="login-content-zone">
+                                <div class="login-content-label">
+                                    <label>Nom d'Utilisateur</label>
+                                </div>
+                                <div class="login-content-points">
+                                    <!-- <label>:</label> -->
+                                </div>
+                                <div class="login-content-input">
+                                    <input type="text" ng-model="username" name="username" class="success" ng-class="{'error':invalidName}" placeholder="Nom d'Utilisateur" >
+                                </div>
+                            </div>
+                            <div class="login-content-zone">
+                                    <div class="login-content-label">
+                                            <label>Mot de passe </label>
+                                        </div>
+                                        <div class="login-content-points">
+                                            <!-- <label>:</label> -->
+                                        </div>
+                                        <div class="login-content-input">
+                                            <input ng-model="password" type="password" name="password" class="success" placeholder="Mot de passe">
+                                        </div>
+                            </div>
+                            <div class="login-content-zone">
+                                    <div class="login-content-label">
+                                            <label></label>
+                                        </div>
+                                        <div class="login-content-points">
+                                            <label></label>
+                                        </div>
+                                        <div class="login-content-input">
+                                            <div class="in-checkbox">
+                                                 <input type="checkbox">
+                                            </div>
+                                            <div class="in-label">
+                                                    <label>garder ma session active</label>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+
+                        <div class="login-button">
+                            <input type="submit" class="short-left" value="Se connnecter" >
+                        </div>
+
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>    
+    </body>
+
+</html>

@@ -1,0 +1,71 @@
+<div class="cours-charge">
+
+    <div class="cours-title">
+        <div class="cours-icon">
+            <img src="assets/images/cours-change.png" alt="">
+        </div>
+        <div class="cours-icon-title">
+                <h2>Le Cours de change pour le jeudi <span>12/10/2018</span> </h2>
+        </div>
+    </div>
+
+    <div class="cours-table">
+        <div class="table-cours">
+            <table>
+                <tr>
+                    <th class="device-flag"></th>
+                    <th class="device-name" >Devices</th>
+                    <th class="device-vente" >Vente à la banque</th>
+                    <th class="device-cours-achat" >Cours d'achat</th>
+                    <th class="device-cours-vente">Cours de vente</th>
+                </tr>
+          
+                <tr ng-repeat="device in devices">
+                        <td ng-class="{'device-pair':device.statut,'device-impair':!device.statut}" class="device-flag">
+                            <img ng-src="{{device.flag}}" alt="">
+                        </td>
+                        <td ng-class="{'device-pair':device.statut,'device-impair':!device.statut}" class="device-name">
+                            {{device.devises | uppercase }}
+                        </td>
+                        <td ng-class="{'device-pair':device.statut,'device-impair':!device.statut}" class="device-vente" >
+                            <div class="device-vente-value" style="margin-top:-10px;">
+                                <p class="data vn" ng-dblclick="editDeviceVente($event)">{{device.vente_banque | number:4 }}</p>
+                            </div>
+                            <div class="device-vente-input" style="margin-top:-10px;" >
+                                <form class="form">
+                                        <input class="champs" ng-keyup="enterValue($event)" type="text">
+                                        <input type="hidden" value="{{device.id}}" class="id">
+                                </form>
+                            </div>
+                        </td>
+                        <td ng-class="{'device-pair':device.statut,'device-impair':!device.statut}" class="device-cours-achat">
+                                <div class="device-vente-value" style="margin-top:-10px;">
+                                        <p class="data mn" ng-dblclick="editDeviceVente($event)">{{device.cours_achat | number:1 }}</p>
+                                    </div>
+                                    <div class="device-vente-input" style="margin-top:-10px;" >
+                                        <form class="form">
+                                                <input class="champs" ng-keyup="enterValue($event)" type="text">
+                                                <input type="hidden" class="id" value="{{device.id}}">
+                                        </form>
+                                    </div>
+                            
+                        </td>
+                        <td ng-class="{'device-pair':device.statut,'device-impair':!device.statut}" class="device-cours-vente">
+                                <div class="device-vente-value" style="margin-top:-10px;">
+                                        <p class="data vs" ng-dblclick="editDeviceVente($event)">{{device.cours_vente | number:1 }}</p>
+                                    </div>
+                                    <div class="device-vente-input" style="margin-top:-10px;" >
+                                        <form class="form">
+                                                <input class="champs" ng-keyup="enterValue($event)" type="text">
+                                                <input type="hidden" class="id" value="{{device.id}}">
+                                        </form>
+                                    </div>
+                            
+                        </td>
+                    </tr>
+    
+            </table>
+        </div>
+    </div>
+
+</div>

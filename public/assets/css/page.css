@@ -1,0 +1,413 @@
+body {
+    margin:0;
+    padding: 0;
+}
+
+#login {
+    width:90%;
+    margin:30px 5%;
+    position: relative;
+    height: 580px;
+    background:white;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    background: #eeeeee;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    background:white;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+}
+
+.header-logo {
+    float: left;
+    width: 100px;
+    height: 40px;
+    margin:10px 20px;
+}
+
+.header-logo img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.login {
+    height: 400px;
+    width: 720px;
+    margin:50px 20%
+}
+
+.login-title {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-title h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:22px;
+    color:#555;
+    margin:0;
+    font-weight: 100;
+}
+
+.login-content {
+    width:100%;
+    height: 300px;
+    background:white; /* white */
+    border-radius:2px;
+    margin: 20px 0;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.2); 
+}
+
+.login-content-img {
+    width: 220px;
+    height: 200px;
+    float: left;
+    margin:20px 0 0 20px;
+}
+
+.lower-img {
+    margin:30px 0 0 20px;
+}
+
+.login-content-img img {
+    width: 200px;
+    height: 100%;
+}
+
+.login-content-formulaire {
+    width: 450px;
+    height: 280px;
+    margin:20px 10px;
+    float: left;
+}
+
+.lower {
+    margin:35px 10px 0 10px;
+}
+
+.login-content-1 {
+    width:100%;
+    height: 180px;
+}
+
+.login-content-zone {
+    width: 100%;
+    height: 40px;
+    margin: 2px 0;
+}
+
+.login-content-label {
+    width:40%;
+    float: left;
+    height: 20px;
+    margin:10px 0;
+}
+
+.longer {
+    width: 50%;
+}
+
+.login-content-label label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.login-content-points label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.login-content-points {
+    width:10px;
+    height: 20px;
+    float: left;
+    margin:10px 0;
+}
+
+.login-content-input {
+    width: 50%;
+    height: 26px;
+    margin:7px 0;
+    float: left;
+    margin-left: 2%;
+}
+
+.shorter {
+ width: 40%;   
+}
+.login-content-input input {
+    height: 28px;
+    border-radius:2px;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left:10px;
+    font-size: 16px;
+    color:#555;  
+    border:none;
+    
+    /* */
+}
+
+.success {
+    background:#eee;
+}
+.error {
+    background: rgb(252, 170, 170);
+}
+
+.login-content-input label {
+    padding:3px 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.login-content-input label {
+    float: left;
+}
+
+.in-label {
+    margin: 6px 5px;
+    float: left;
+}
+
+.in-label label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.in-checkbox {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+
+.login-button {
+    height: 60px;
+    width: 100%;
+}
+
+.login-button input {
+    background:  #24609f; 
+    color:white;
+    font-size: 15px;
+    padding:5px 10px;
+    border: none;
+    border-radius:2px;
+    cursor: pointer;
+    transition:0.1s ease all;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.short-left {
+    margin-left:44%;
+}
+.long-left {
+    margin-left: 54%; 
+}
+
+.login-button input:hover {
+    background: rgba(0,97,189,0.9);
+}
+
+@media screen and (max-width:1100px){
+    #login {
+        width:90%;
+        margin:30px 5%;
+        position: relative;
+        height: 780px;
+    
+    }
+
+    .login {
+        height: 400px;
+        width: 720px;
+        margin:50px 10%;
+    }
+
+    .login-content {
+        width:70%;
+        height: 500px;
+        background:white;
+        border-radius:2px;
+        margin: 20px 15%;
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.2); 
+    }
+
+    .login-content-formulaire {
+        width: 450px;
+        height: 280px;
+        margin: 20px 30px;
+        float: left;
+    }
+    
+    .login-content-img {
+        width: 40%;
+        height: 200px;
+        margin:20px 0 0 30%;
+    }
+}
+
+@media screen and (max-width:900px){
+    
+    .login-title {
+        width:80%;
+        height: 70px;
+        margin:0 10%; 
+    }
+}
+
+@media screen and (max-width:800px){
+    
+    #login {
+        width:90%;
+        margin:30px 5%;
+        position: relative;
+        height: 780px;
+    }
+
+    .login-title {
+        width:70%;
+        height: 70px;
+        margin:0 4%; 
+    }
+
+    .login {
+        height: 400px;
+        width: 720px;
+        margin:50px 2%;
+    }
+
+    .login-content {
+        width: 70%;
+        height: 500px;
+        background:white;
+        border-radius: 2px;
+        margin: 20px 4%;
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.2); 
+    }
+
+    .login-content-img {
+        width: 40%;
+        height: 200px;
+        margin:20px 0 0 30%;
+    }
+    
+    .login-title {
+        width: 70%;
+        height: 70px;
+        margin:0 1%; 
+    }
+
+    .login-content {
+        width: 70%;
+        height: 500px;
+        background:white;
+        border-radius: 2px;
+        margin: 20px 1%;
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.2); 
+    }
+    
+}
+
+@media screen and (max-width:640px){}
+
+@media screen and (max-width:600px){
+    
+    
+    .login-content {
+        width: 66%;
+        height: 500px;
+        background:white;
+        border-radius: 2px;
+        margin: 20px 1%;
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.2); 
+    }
+
+    .login-content-input {
+        width: 44%;
+        height: 26px;
+        margin:7px 0;
+        float: left;
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-width:590px) {
+    
+    #login {
+        width:260px;
+        margin:30px 20%;
+    }
+
+    .login-button {
+        text-align: center; 
+    }
+
+    .shorter {
+        width: 45%;   
+    }
+
+    .longer {
+        width: 40%;
+    }
+
+.short-left {
+    margin-left:0;
+}
+.long-left {
+    margin-left: 0; 
+}
+    .login-title {
+        width:70%;
+        height: 110px;
+        margin:0 3%; 
+    }
+    .login-content-img {
+        width: 200px;
+        margin:10px 20px;
+    }
+    .login-content {
+        width: 240px; /* 66% */
+        height: 500px;
+        background: white;
+        border-radius: 2px;
+        margin: 20px 2.5%;
+        overflow:hidden;
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.2); 
+    }
+    
+    .in-label {
+        width: 160px;
+    }
+    
+    .in-label label {
+        font-size: 13px;
+        padding: 2.5px 0;
+    }
+
+    .login {
+        height: 400px;
+        width: 320px;
+        margin: 50px 0%;
+    }
+
+    .login-content-zone {
+        margin-left: -220px;
+    }
+
+    .login-button {
+        margin-left: -130px;
+    }
+
+}
+
+
+@media screen and (max-width:350px) {
+    #login {
+        width:260px;
+        margin:30px 7%;
+    }
+}

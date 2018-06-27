@@ -1,0 +1,201 @@
+<div class="achat">
+    
+    <div class="achat-debut longer-compte-zone">
+            <div class="achat-zone absolute-achat-zone longer-compte-zone">
+                        <div class="achat-title">
+ 
+                                         <div class="img-achat">
+                                             <img src="assets/images/operation.png" alt="">
+                                         </div>
+                     
+                                         <div class="achat-titre">
+                                             <h3>Compte rendu quotidienne : </h3>
+                                         </div>
+                        </div>
+                        
+                        <div class="compte-rendu">
+                            <div class="compte-rendu-date">
+                                <div class="compte-rendu-label">
+                                    <label>Date du journal</label>
+                                </div>
+                                <div class="compte-rendu-select">
+                                        <div class="styled-select">
+                                                <select ng-model="dateOp">
+                                                        <option value="2018-05-12">12/05/2018</option>
+                                                        <option value="2018-05-13">13/05/2018</option>
+                                                        <option value="2018-05-14">14/05/2018</option>
+                                                        <option value="2018-05-15">15/05/2018</option>
+                                                </select>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="compte-rendu-consultation">
+                                <div class="compte-rendu-label">
+                                </div>
+                                <div class="compte-rendu-select">
+                                        <div class="compte-rendu-link">
+                                            <p ng-click="consulterAll()">Consulter le journal des operations de change</p>
+                                        </div>
+                                        <div class="compte-rendu-cons">
+                                            <img src="assets/images/save.png" alt="">
+                                        </div>
+                                        <div class="compte-rendu-imprimer">
+                                            <img src="assets/images/printer.png" alt="">
+                                        </div>
+                                </div>
+                                        
+                            </div>
+                        </div>
+            </div>
+    </div>
+
+    <div class="achat-debut operation-lenght" >
+
+        <div class="achat-zone absolute-achat-zone operation-lenght" >
+        
+
+            <div class="achat-title">
+
+                <div class="img-achat">
+
+                    <img src="assets/images/operation.png" alt="">
+
+                </div>
+
+                <div class="achat-titre">
+
+                    <h3>Comptes rendu mensuelles : </h3>
+
+                </div>
+
+            </div>
+
+            <div class="comptes-rends">
+                    <div style="margin-left:20px;" class="compte-rendu-date">
+                            <div class="compte-rendu-label">
+                                <label>Date du journal</label>
+                            </div>
+                            <div class="compte-rendu-select">
+                                    <div class="styled-select">
+                                            <select ng-model="numberMonth">
+                                                    <option value="05">Mai</option>
+                                                    <option value="06">Juin</option>
+                                                    <option value="07">Juillet</option>
+                                            </select>
+                                    </div>
+                            </div>
+                    </div>
+                        
+                <div class="compte-rend">
+                    <div class="compte-rendu-selecte">
+                        <div class="compte-rendu-linke">
+                            <p ng-click="consulterAchats()">Consulter le journal des operations d'achats</p>
+                        </div>
+                        <div class="compte-rendu-cons">
+                            <img src="assets/images/save.png" alt="">
+                        </div>
+                        <div class="compte-rendu-imprimer">
+                            <img src="assets/images/printer.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="compte-rend">
+                        <div class="compte-rendu-selecte">
+                            <div class="compte-rendu-linke">
+                                <p ng-click="consulterVentes()" >Consulter le journal des operations de vente</p>
+                            </div>
+                            <div class="compte-rendu-cons">
+                                <img src="assets/images/save.png" alt="">
+                            </div>
+                            <div class="compte-rendu-imprimer">
+                                <img src="assets/images/printer.png" alt="">
+                            </div>
+                        </div>
+                </div>
+                
+                <div class="line-cmp-rd"></div>
+
+                
+                <div class="compte-rend">
+                        <div class="compte-rendu-selecte">
+                            <div class="compte-rendu-linke">
+                                <p ng-click="consulterCessions()" >Consulter le journal des operations de cession</p>
+                            </div>
+                            <div class="compte-rendu-cons">
+                                <img src="assets/images/save.png" alt="">
+                            </div>
+                            <div class="compte-rendu-imprimer">
+                                <img src="assets/images/printer.png" alt="">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>            
+            
+        </div>
+        <div ng-show="consultationZone" class="absolute-achat-zone" style="position: relative;top:-100px;">
+            <div class="tableau-operations">
+                <div class="tableau-header">
+                    <div class="tableau-header-title">
+                        <h5>Tableau des opérations</h5>
+                    </div>
+                    <div class="tableau-header-close" ng-click="closeConsultationZone()">
+                        <img src="assets/images/close.png" alt="">
+                    </div>
+                </div>
+                <div class="tableau-body">
+                    <div class="tableau-body-1">
+                        <div class="tab-head">
+                            <div class="tab-date">
+                                <label>Date</label>
+                            </div>
+                            <div class="tab-bordereau">
+                                <label>Bordereau</label>
+                            </div>
+                            <div class="tab-1-devise">
+                                <label>Device</label>
+                            </div>
+                            <div class="tab-1-montant">
+                                <label>Montant</label>
+                            </div>
+                            <div class="tab-1-coursapp">
+                                <label>Cours appliqué</label>
+                            </div>
+                            <div class="tab-1-coursdh">
+                                <label>Valeur en dh</label>
+                            </div>
+                        </div>
+
+                        <div ng-repeat="op in operations" class="tab-head">
+                                <div class="tab-date">
+                                    <label>{{op.date.substring(0,10)}}</label>
+                                </div>
+                                <div class="tab-bordereau">
+                                    <label>{{op.bordereau}}</label>
+                                </div>
+                                <div class="tab-devise">
+                                    <label>{{op.devise | number:2}}</label>
+                                </div>
+                                <div class="tab-montant">
+                                    <label>{{op.montant | number:2}}</label>
+                                </div>
+                                <div class="tab-coursapp">
+                                    <label>{{op.cours | number:2}}</label>
+                                </div>
+                                <div class="tab-coursdh">
+                                    <label>{{op.valeur | number:2}}</label>
+                                </div>
+                        </div>
+
+                        
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

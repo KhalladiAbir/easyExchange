@@ -1,0 +1,6 @@
+<?php
+$var = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvbG9naW4iLCJpYXQiOjE1MjQzOTAxMjksImV4cCI6MTUyNDM5MzcyOSwibmJmIjoxNTI0MzkwMTI5LCJqdGkiOiJpazQzekV4TjhnU2tZeE9uIn0.WwJtznLzMsEUlBhgD_G-t-bFtnk4q8PQRivJhQrA41M';
+echo $var.length();
+
+
+?>

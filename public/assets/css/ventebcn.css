@@ -1,0 +1,117 @@
+.small-achat-banc {
+    height: 80px;
+}
+
+.icon-abs {
+    position:absolute;
+    cursor: pointer;
+}
+
+.icon-file, .icon-input {
+    overflow: hidden;
+    width:22px;
+    height: 22px;
+    cursor:pointer;
+}
+
+.hidden {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.icon-file img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.file-icon-zone {
+    float:left;
+    width:30px;
+    height: 22px;
+}
+
+.icon-file-name {
+    float:left;
+    width:150px;
+    height: 22px;
+}
+
+.icon-file-name label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:14px;
+}
+
+
+.add-area-5 {
+    width: 400px;
+    margin:10px 50px;
+    height: 95px;
+}
+
+
+.vente-area-bcn, {
+    width: 400px;
+    margin:10px 50px;
+    height: 60px;
+}
+
+.animation {
+    animation: anim;
+    animation-duration: 0.05s;
+    animation-iteration-count: 5;
+}
+
+@keyframes anim {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(1deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-1deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.longerS {
+    height: 260px;
+}
+
+.table-ops, .table-opss {
+    width:870px;
+    height: 50px;
+    border-radius:2px 2px 0 0;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.1);
+}
+
+.table-col, .table-col-s {
+    float:left;
+    width:12.5%;
+    height: 50px;
+    text-align: center;
+}
+.blanc {
+    background:white;
+}
+
+.table-col p, .table-col-s p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    margin:0;
+    padding:2px 0;
+}
+
+.table-opss {
+    height: 30px;
+}
+
+.table-col-s {
+    height: 30px
+}
